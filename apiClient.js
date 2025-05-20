@@ -30,6 +30,10 @@ class ApiClient {
         return this._request('DELETE', route, null, params);
     }
 
+    // Perform a PATCH request to a route, with a JSON body and optional query parameters
+    async patch(route, body = {}, params = {}) {
+        return this._request('PATCH', route, body, params);
+}
     // Private helper method: constructs a full URL with query parameters
     _buildURL(route, params) {
         const url = new URL(`${this.baseURL}${route}`);

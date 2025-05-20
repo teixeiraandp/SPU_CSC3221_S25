@@ -1,13 +1,50 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>API Client Test</title>
-    <script type="module" src="app.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Client</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="app.js" defer></script>
 </head>
 <body>
-    <h1>Test API Client Library</h1>
-    <p>Check the browser console for output.</p>
+  <div class="container">
+    <h2>HTTP Library Project
+        Tester</h2>
+
+    <div class="form-group">
+      <label for="method">Method</label>
+      <select id="method">
+        <option>GET</option>
+        <option>POST</option>
+        <option>PUT</option>
+        <option>PATCH</option>
+        <option>DELETE</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="route">Route</label>
+      <input type="text" id="route" value="/users" />
+    </div>
+
+    <div class="form-group">
+      <label for="params">Path Params</label>
+      <input type="text" id="params" placeholder="id=1" />
+    </div>
+
+    <div class="form-group" id="body-group" style="display:none;">
+      <label for="body">Body (JSON)</label>
+      <textarea id="body" rows="4">{}</textarea>
+    </div>
+
+    <button id="sendBtn">Send</button>
+
+    <div id="loading" class="spinner hidden"></div>
+    <div id="result" class="result"></div>
+  </div>
+
+  <div id="toast"></div>
+  <div class="names-background" id="bgNames"></div>
 </body>
 </html>
